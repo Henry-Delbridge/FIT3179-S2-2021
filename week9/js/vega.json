@@ -11,7 +11,7 @@
         }
   },
   "transform": [{
-      "lookup": "properties.NAME",
+      "lookup": "properties.wa_lga_s_3",
       "from": {
         "data": {
           "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/week9/js/income_lga.csv"
@@ -34,7 +34,7 @@
       "scale": {"type": "log"}
     },
     "tooltip": [
-      {"field": "properties.NAME", "type": "nominal", "title": "LGA"},
+      {"field": "properties.wa_lga_s_3", "type": "nominal", "title": "LGA"},
       {"field": "Income", "type": "quantitative"}
     ]
   }
