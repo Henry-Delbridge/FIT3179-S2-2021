@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "COVID-19 Active Cases (10 Oct 2020)",
+  "title": "Average Income per LGA (WA)",
   "width": 800,
   "height": 600,
   "data": {
@@ -26,17 +26,6 @@
   },
   "mark": {
     "type": "geoshape"
-    },
-  "encoding": {
-    "color": {
-      "field": "Income",
-      "type": "quantitative",
-      "scale": {"type": "log"}
-    },
-    "tooltip": [
-      {"field": "properties.wa_lga_s_3", "type": "nominal", "title": "LGA"},
-      {"field": "Income", "type": "quantitative"}
-    ]
-  }
+    }
 
 }
