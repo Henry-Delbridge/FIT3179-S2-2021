@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Average Income per LGA (WA) -",
+  "title": "Average Income per LGA (WA)",
   "width": 800,
   "height": 600,
   "data": {
@@ -32,7 +32,10 @@
       "field": "Income",
       "type": "quantitative",
       "scale": {"type": "linear"}
-    }
+    },
+    "tooltip": [
+      {"field": "properties.wa_lga_s_3", "type": "nominal", "title": "LGA"},
+      {"field": "Income", "type": "quantitative"}
+    ]
   }
-
 }
