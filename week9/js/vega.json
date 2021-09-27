@@ -32,11 +32,7 @@
       "field": "Income",
       "type": "quantitative",
       "scale": {"type": "log"}
-    },
-    "tooltip": [
-      {"field": "properties.wa_lga_s_3", "type": "nominal", "title": "LGA"},
-      {"field": "Income", "type": "quantitative"}
-    ]
+    }
   }
 
 }
