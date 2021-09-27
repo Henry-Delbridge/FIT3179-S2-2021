@@ -14,13 +14,13 @@
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/KaneSec/vega_lite/main/3_choropleth_map/data/covid_10_10_2020.csv"
+          "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/week9/js/income_lga.csv"
         },
-        "key": "Country",
-        "fields": ["Active"]
+        "key": "LGA",
+        "fields": ["Income"]
       }
     },
-    {"calculate": "datum.Active + 0.1", "as": "Active Cases"}
+    {"calculate": "datum.Income", "as": "Average Income"}
   ],
   "projection": {
     "type": "equirectangular"
