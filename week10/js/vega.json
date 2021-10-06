@@ -48,6 +48,7 @@
   ],
   "projection": {
     "type": "equirectangular",
+    "center": {"expr": "[0, 0, 0]"},
     "scale": {"expr": "zoom_level"}
   },
   "layer": [
