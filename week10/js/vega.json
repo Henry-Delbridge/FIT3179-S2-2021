@@ -6,11 +6,11 @@
   "params": [
     {
       "name": "income_selection",
-      "value": 75000,
+      "value": 100000,
       "bind": {
         "input": "range",
         "min": 0,
-        "max": 75000,
+        "max": 100000,
         "step": 1,
         "name": "Filter Income < "
       }
@@ -19,9 +19,9 @@
   "data": {
     "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/week9/js/wa_lga_topo.json",
     "format": {
-          "type": "topojson",
-          "feature": "wa_lga"
-        }
+      "type": "topojson",
+      "feature": "wa_lga"
+    }
   },
   "transform": [{
       "lookup": "properties.wa_lga_s_3",
@@ -32,7 +32,8 @@
         "key": "LGA",
         "fields": ["Income"]
       }
-    }
+    },
+    {"filter": "datum.Income < income_selection"}
   ],
   "projection": {
     "type": "equirectangular"
