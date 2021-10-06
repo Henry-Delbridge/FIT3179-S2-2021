@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Average Income per LGA (WA) -",
+  "title": "Average Income per LGA (WA)",
   "width": 800,
   "height": 600,
   "params": [
