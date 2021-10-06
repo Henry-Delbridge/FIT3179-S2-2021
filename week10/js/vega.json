@@ -37,7 +37,7 @@
   ],
   "projection": {
     "type": "equirectangular",
-    "center": [20, 100],
+    "center": [26, 100],
     "scale": 100
   },
   "layer": [
