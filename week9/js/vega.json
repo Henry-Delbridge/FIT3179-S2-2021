@@ -3,6 +3,19 @@
   "title": "Average Income per LGA (WA)",
   "width": 800,
   "height": 600,
+  "params": [
+    {
+      "name": "income_selection",
+      "value": 75000,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 75000,
+        "step": 1,
+        "name": "Filter Income < "
+      }
+    }
+  ],
   "data": {
     "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/week9/js/wa_lga_topo.json",
     "format": {
