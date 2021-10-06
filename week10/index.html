@@ -13,12 +13,18 @@
 </head>
 <body>
   
-<div id="symbol_map"></div>
+  <div id="symbol_map"></div>
+  <div id="symbol_map2"></div>
 
 <script type="text/javascript">
 
-  var spec2 = "js/vega.json";
+var spec2 = "js/vega.json";
   vegaEmbed('#symbol_map', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var spec2 = "js/vega2.json";
+  vegaEmbed('#symbol_map2', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>

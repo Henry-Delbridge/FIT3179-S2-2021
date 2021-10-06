@@ -1,0 +1,61 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Average Income per LGA (WA)",
+    "width": 800,
+    "height": 600,
+    "params": [
+      {
+        "name": "income_selection",
+        "value": 100000,
+        "bind": {
+          "input": "range",
+          "min": 0,
+          "max": 100000,
+          "step": 10000,
+          "name": "Filter Income < : "
+        }
+      }
+    ],
+    "data": {
+      "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/week9/js/wa_lga_topo.json",
+      "format": {
+        "type": "topojson",
+        "feature": "wa_lga"
+      }
+    },
+    "transform": [{
+        "lookup": "properties.wa_lga_s_3",
+        "from": {
+          "data": {
+            "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/week9/js/income_lga.csv"
+          },
+          "key": "LGA",
+          "fields": ["Income"]
+        }
+      },
+      {"filter": "datum.Income < income_selection"}
+    ],
+    "projection": {
+      "type": "equirectangular",
+      "center": [121, -24],
+      "scale": 1500
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "geoshape"
+        },
+        "encoding": {
+          "color": {
+            "field": "Income",
+            "type": "quantitative",
+            "scale": {"type": "linear"}
+          },
+          "tooltip": [
+            {"field": "properties.wa_lga_s_3", "type": "nominal", "title": "LGA"},
+            {"field": "Income", "type": "quantitative"}
+          ]
+        }
+      }
+    ]
+  }
