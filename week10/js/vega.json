@@ -47,7 +47,8 @@
     {"filter": "datum.Income < income_selection"}
   ],
   "projection": {
-    "type": "equirectangular"
+    "type": "equirectangular",
+    "scale": {"expr": "1.0"}
   },
   "layer": [
     {
