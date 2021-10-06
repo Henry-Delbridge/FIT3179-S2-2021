@@ -5,14 +5,36 @@
   "height": 600,
   "params": [
     {
-      "name": "income_selection",
+      "name": "income_selection_min",
       "value": 100000,
       "bind": {
         "input": "range",
         "min": 0,
         "max": 100000,
-        "step": 1,
-        "name": "Filter Income < "
+        "step": 10000,
+        "name": "Filter Income > : "
+      }
+    },
+    {
+      "name": "income_selection_max",
+      "value": 100000,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 100000,
+        "step": 10000,
+        "name": "Filter Income < : "
+      }
+    },
+    {
+      "name": "zoom_selection",
+      "value": 30000,
+      "bind": {
+        "input": "range",
+        "min": 3500,
+        "max": 60000,
+        "step": 100,
+        "name": "Zoom: "
       }
     }
   ],
@@ -33,7 +55,7 @@
         "fields": ["Income"]
       }
     },
-    {"filter": "datum.Income < income_selection"}
+    {"filter": "datum.Income < income_selection_max && datum.Income > income_selection_min"}
   ],
   "projection": {
     "type": "equirectangular"
