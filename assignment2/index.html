@@ -13,11 +13,16 @@
 </head>
 <body>
 
-  <div id="visualisation1"></div>
+  <div id="line1"></div>
+  <div id="bar1"></div>
 
 <script type="text/javascript">
-var spec2 = "js/vega.json";
-  vegaEmbed('#visualisation1', spec2).then(function(result) {
+var spec2 = "js/line_vega.json";
+  vegaEmbed('#line1', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+var spec2 = "js/bar_vega.json";
+  vegaEmbed('#bar1', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
