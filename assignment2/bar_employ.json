@@ -1,0 +1,38 @@
+[
+   {
+      "State":"New South Wales",
+      "Rate": 59.40
+   },
+   {
+      "State":"Victoria",
+      "Rate": 64.10
+   },
+   {
+      "State":"Queensland",
+      "Rate": 62.30
+   },
+   {
+      "State":"South Australia",
+      "Rate": 59.80
+   },
+   {
+      "State":"Western Australia",
+      "Rate": 65.90
+   },
+   {
+      "State":"Tasmania",
+      "Rate": 58.30
+   },
+   {
+       "State": "Northern Territory",
+       "Rate": 68.30
+   },
+   {
+       "State": "Australian Capital Territory",
+       "Rate": 67.60
+   },
+   {
+       "State": "Australia",
+       "Rate": 62.20
+   }
+]
