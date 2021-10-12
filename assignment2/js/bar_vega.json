@@ -1,7 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
-  "height": 250,
+  "title": "Unemployment rate per state %",
   "data": {"url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/bar_employ.json"},
   "mark": "bar",
   "encoding": {
