@@ -1,11 +1,11 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": "container",
-    "height": 250,
-    "data": {"url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/bar_employ.json"},
-    "mark": "bar",
-    "encoding": {
-      "x": {"field": "State"},
-      "y": {"field": "Rate", "type": "quantitative"}
-    }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 250,
+  "data": {"url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/bar_employ.json"},
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "State"},
+    "y": {"field": "Rate", "type": "quantitative"}
   }
+}
