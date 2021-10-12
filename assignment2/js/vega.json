@@ -1,11 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Google's stock price over time.",
-  "data": {"url": "data/stocks.csv"},
-  "transform": [{"filter": "datum.symbol==='GOOG'"}],
+  "description": "Unemployment rate over time.",
+  "data": {"url": "line_unemploy.csv"},
   "mark": "line",
   "encoding": {
-    "x": {"field": "date", "type": "temporal"},
-    "y": {"field": "price", "type": "quantitative"}
+    "x": {"field": "Date", "type": "temporal"},
+    "y": {"field": "People", "type": "quantitative"}
   }
 }
