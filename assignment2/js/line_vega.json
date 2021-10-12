@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Unemployment rate over time % (Australia)",
+  "width": 400,
+  "height": 300,
   "description": "Unemployment rate over time.",
   "data": {"url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/line_unemploy.csv"},
   "mark": {
