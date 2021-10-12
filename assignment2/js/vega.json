@@ -4,7 +4,7 @@
   "data": {"url": "line_unemploy.csv"},
   "mark": "line",
   "encoding": {
-    "x": {"field": "Date", "type": "temporal"},
+    "x": {"field": "Date", "timeUnit": "year"},
     "y": {"field": "People", "type": "quantitative"}
   }
 }
