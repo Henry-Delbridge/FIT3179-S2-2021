@@ -2,7 +2,10 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Unemployment rate over time.",
   "data": {"url": "line_unemploy.csv"},
-  "mark": "line",
+  "mark": {
+    "type": "line",
+    "point": "true"
+  },
   "encoding": {
     "x": {"timeUnit": "year", "field": "Date"},
     "y": {"aggregate": "mean", "field": "People", "type": "quantitative"}
