@@ -4,7 +4,7 @@
   "data": {"url": "line_unemploy.csv"},
   "mark": {
     "type": "line",
-    "point": "true"
+    "point": true
   },
   "encoding": {
     "x": {"timeUnit": "year", "field": "Date"},
