@@ -19,6 +19,7 @@
   <div class="charts">
     <div id="line1"></div>
     <div id="barChart"></div>
+    <div id="map"></div>
   </div>
 
 <script type="text/javascript">
@@ -29,6 +30,11 @@
 
   var barChart = "js/bar_vega.json";
   vegaEmbed('#barChart', barChart).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var map = "js/map_vega.json";
+  vegaEmbed('#map', map).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
