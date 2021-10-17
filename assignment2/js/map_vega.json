@@ -3,6 +3,19 @@
   "title": "Average Income per LGA (WA)",
   "width": 800,
   "height": 600,
+  "params": [
+    {
+      "name": "income_selection",
+      "value": 100000,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 80000,
+        "step": 10000,
+        "name": "Filter Income < : "
+      }
+    }
+  ],
   "data": {
     "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/js/wa_lga_topo.json",
     "format": {
@@ -24,24 +37,11 @@
   ],
   "projection": {
     "type": "equirectangular",
-    "center": [121, -24],
-    "scale": 1500
+    "center": [116, -32],
+    "scale": 30000
   },
   "layer": [
     {
-      "params": [
-        {
-          "name": "income_selection",
-          "value": 100000,
-          "bind": {
-            "input": "range",
-            "min": 0,
-            "max": 100000,
-            "step": 10000,
-            "name": "Filter Income < : "
-          }
-        }
-      ],
       "mark": {
         "type": "geoshape"
       },
