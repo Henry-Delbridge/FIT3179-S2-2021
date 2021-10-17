@@ -19,6 +19,7 @@
   <div class="charts">
     <div id="line1"></div>
     <div id="barChart"></div>
+    <div id="industry"></div>
     <div id="map"></div>
     <div id="population"></div>
   </div>
@@ -41,6 +42,11 @@
 
   var population = "js/population_vega.json";
   vegaEmbed('#population', population).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var industry = "js/industry_vega.json";
+  vegaEmbed('#industry', industry).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
