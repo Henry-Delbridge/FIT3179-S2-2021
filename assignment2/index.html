@@ -11,51 +11,57 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
   
 </head>
+<title>Demographics of Western Australia</title>
 <body>
-  
-  <h1>Economic Peformance of Australia in the 2010s</h1>
-  <p>Test box is here.</p>
+  <div id="outer_container">
+    <div id="banner">
+      <h1>Demographics of Western Australia</h1>
+      <p>This page shows the demographics of Western Australia</p>
+    </div>
+    <div id="content">
+      <div id="map" width="60%"></div>
+      <div class="column">Column  1
+        <div id="line1"></div>
+        <div id="line2"></div>
+      </div>
+      <div class="column"> Column 2</div>
+        <div id="barChart"></div>
+        <div id="industry"></div>
+      </div>
+      <div class="column">Column 3</div>
 
-  <div class="charts">
-    <div id="line1"></div>
-    <div id="line2"></div>
-    <div id="barChart"></div>
-    <div id="industry"></div>
-    <div id="map"></div>
-    <div id="population"></div>
+      <script type="text/javascript">
+      var line1 = "js/line_vega.json";
+      vegaEmbed('#line1', line1).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+    
+      var line2 = "js/multi_line_vega.json";
+      vegaEmbed('#line2', line2).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+    
+      var barChart = "js/bar_vega.json";
+      vegaEmbed('#barChart', barChart).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+    
+      var map = "js/map_vega.json";
+      vegaEmbed('#map', map).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+    
+      var population = "js/population_vega.json";
+      vegaEmbed('#population', population).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+    
+      var industry = "js/industry_vega.json";
+      vegaEmbed('#industry', industry).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+      </script>
+    </div>
   </div>
-
-<script type="text/javascript">
-  var line1 = "js/line_vega.json";
-  vegaEmbed('#line1', line1).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-
-  var line2 = "js/multi_line_vega.json";
-  vegaEmbed('#line2', line2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-
-  var barChart = "js/bar_vega.json";
-  vegaEmbed('#barChart', barChart).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-
-  var map = "js/map_vega.json";
-  vegaEmbed('#map', map).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-
-  var population = "js/population_vega.json";
-  vegaEmbed('#population', population).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-
-  var industry = "js/industry_vega.json";
-  vegaEmbed('#industry', industry).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
-
 </body>
 </html>

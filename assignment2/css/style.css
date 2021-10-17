@@ -6,9 +6,15 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	background-color: beige;
 }
 
-.charts {
+.column {
+	width:33.33%;
+	float: center;
+}
+
+.column {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;

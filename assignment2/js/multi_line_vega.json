@@ -1,13 +1,12 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Unemployment Rate of different LGAs between 2011 and 2016.",
-    "data": {"url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/datasets/unemployment.csv"},
-    "mark": {
-      "type": "line",
-      "point": true
+    "description": "Stock prices of 5 Tech Companies over Time.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/datasets/unemployment.csv"
     },
+    "mark": {"type": "line", "point": true},
     "encoding": {
-      "x": {"timeUnit": "year", "type":"ordinal"},
+      "x": {"timeUnit": "year", "field": "Year"},
       "y": {"field": "Rate", "type": "quantitative"},
       "color": {"field": "Region", "type": "nominal"}
     }

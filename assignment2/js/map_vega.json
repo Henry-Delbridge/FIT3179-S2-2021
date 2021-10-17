@@ -1,56 +1,98 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Average Income per LGA (WA)",
-  "width": 800,
+  "title": "Average Income per Capita for each LGA in Western Australia",
+  "width": "container",
   "height": 600,
   "params": [
     {
-      "name": "Year",
+      "name": "Year_selection",
       "bind": {
-        "input": "select", "options": ["2011", "2012", "2013", "2014", "2015", "2016", "2017"]
-      }
-    }
-  ],
-  "transform": [{
-      "lookup": "properties.wa_lga_s_3",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/datasets/income_year_lga.csv"
-        },
-        "key": "LGA",
-        "fields": ["Income"]
+        "input": "range",
+        "min": 2011,
+        "max": 2017,
+        "step": 1,
+        "name": "Year: "
       }
     },
-    {"filter": "datum.Year == Year"}
-  ],
-  "data": {
-    "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/js/wa_lga_topo.json",
-    "format": {
-      "type": "topojson",
-      "feature": "wa_lga"
+    {
+      "name": "zoom_level",
+      "value": 30000,
+      "bind": {
+        "input": "range",
+        "min": 1000,
+        "max": 6000,
+        "step": 100,
+        "name": "Zoom: "
+      }
+    },
+    {
+      "name": "center_to",
+      "value": [118, -24],
+      "bind": {
+        "input": "select",
+        "options": [[116, -32], [115.5, -34], [118, -14], [118, -24]],
+        "labels": ["Perth CBD", "South West", "Kimberley", "Central"],
+        "name": "Map Centre: "
+      }
     }
-  },
+  ],
   "projection": {
     "type": "equirectangular",
-    "center": [116, -32],
-    "scale": 30000
+    "center": {"expr": "center_to"},
+    "scale": {"expr": "zoom_level"}
   },
   "layer": [
     {
-      "mark": {
-        "type": "geoshape"
+      "data": {
+        "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/js/wa_lga_topo.json",
+        "format": {"type": "topojson", "feature": "wa_lga"}
       },
+      "transform": [
+        {
+          "calculate": "'Data is not available'",
+          "as": "note"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#ddd",
+        "stroke": "white",
+        "strokeWidth": 1
+      },
+      "encoding": {"tooltip": {"field": "note"}}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/datasets/income_year_lga.csv"
+      },
+      "transform": [
+        {
+          "lookup": "LGA",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/js/wa_lga_topo.json",
+              "format": {"type": "topojson", "feature": "wa_lga"}
+            },
+            "key": "LGA"
+          }
+        },
+        {"filter": "datum.year == Year_selection"}
+      ],
+      "mark": {"type": "geoshape", "stroke": "#fff", "strokeWidth": 0.5},
       "encoding": {
+        "shape": {"field": "geo", "type": "geojson"},
         "color": {
           "field": "Income",
           "type": "quantitative",
-          "scale": {"type": "linear"}
+          "scale": {"domain": [20000, 100000], "scheme": "blues"},
+          "legend": {"format": ".2s"}
         },
         "tooltip": [
-          {"field": "properties.wa_lga_s_3", "type": "nominal", "title": "LGA"},
+          {"field": "properties.LGA", "type": "nominal", "title": "LGA"},
           {"field": "Income", "type": "quantitative"}
         ]
       }
     }
-  ]
+  ],
+  "config": {}
 }
