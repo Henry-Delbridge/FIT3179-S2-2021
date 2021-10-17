@@ -7,8 +7,8 @@
       "point": true
     },
     "encoding": {
-      "x": {"timeUnit": "year", "field": "date"},
-      "y": {"aggregate":"mean", "field": "price", "type": "quantitative"},
-      "color": {"field": "symbol", "type": "nominal"}
+      "x": {"timeUnit": "year", "type":"ordinal"},
+      "y": {"field": "Rate", "type": "quantitative"},
+      "color": {"field": "Region", "type": "nominal"}
     }
   }
