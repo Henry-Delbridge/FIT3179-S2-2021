@@ -4,7 +4,7 @@
   "width": 400,
   "height": 300,
   "description": "Unemployment rate over time.",
-  "data": {"url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/line_unemploy.csv"},
+  "data": {"url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/datasets/line_unemploy.csv"},
   "mark": {
     "type": "line",
     "point": true

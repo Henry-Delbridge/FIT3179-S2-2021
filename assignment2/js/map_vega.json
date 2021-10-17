@@ -5,16 +5,23 @@
   "height": 600,
   "params": [
     {
-      "name": "income_selection",
-      "value": 100000,
+      "name": "year_selection",
       "bind": {
-        "input": "range",
-        "min": 0,
-        "max": 80000,
-        "step": 10000,
-        "name": "Filter Income < : "
+        "input": "select", "options": ["2011-12", "2012-13", "2013-14", "2014-15", "2015-16", "2016-17", "2017-18"]
       }
     }
+  ],
+  "transform": [{
+      "lookup": "properties.wa_lga_s_3",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/datasets/income_year_lga.csv"
+        },
+        "key": "LGA",
+        "fields": ["Income"]
+      }
+    },
+    {"filter": "datum.Year == year_selection"}
   ],
   "data": {
     "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/js/wa_lga_topo.json",
@@ -23,18 +30,6 @@
       "feature": "wa_lga"
     }
   },
-  "transform": [{
-      "lookup": "properties.wa_lga_s_3",
-      "from": {
-        "data": {
-          "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/js/income_lga.csv"
-        },
-        "key": "LGA",
-        "fields": ["Income"]
-      }
-    },
-    {"filter": "datum.Income < income_selection"}
-  ],
   "projection": {
     "type": "equirectangular",
     "center": [116, -32],
