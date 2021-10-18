@@ -1,24 +1,25 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "Population Pyramid of Western Australia in 2016.",
-    "data": { "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/datasets/population_pyramid.csv"},
-    "transform": [
-      {"calculate": "datum.sex == 2 ? 'Female' : 'Male'", "as": "gender"}
-    ],
-    "spacing": 0,
-    "hconcat": [{
-      "transform": [{
-        "filter": {"field": "gender", "equal": "Female"}
-      }],
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "A population pyramid (percentages) for the population of WA",
+  "description": "A population pyramid (percentages) for the population of WA",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/datasets/population_pyramid.json"
+  },
+  "transform": [
+    {"calculate": "datum.sex == 2 ? 'Female' : 'Male'", "as": "gender"}
+  ],
+  "spacing": 0,
+  "hconcat": [
+    {
+      "transform": [{"filter": {"field": "gender", "equal": "Female"}}],
       "title": "Female",
       "mark": "bar",
       "encoding": {
-        "y": {
-          "field": "age", "axis": null, "sort": "descending"
-        },
+        "y": {"field": "age", "axis": null, "sort": "descending"},
         "x": {
-          "aggregate": "sum", "field": "people",
-          "title": "population",
+          "aggregate": "sum",
+          "field": "people",
+          "title": "% of Total Population",
           "axis": {"format": "s"},
           "sort": "descending"
         },
@@ -26,43 +27,51 @@
           "field": "gender",
           "scale": {"range": ["#675193", "#ca8861"]},
           "legend": null
-        }
+        },
+        "tooltip": [
+          {"field": "age"},
+          {"field": "people", "aggregate": "sum"}
+        ]
       }
-    }, {
+    },
+    {
       "width": 20,
       "view": {"stroke": null},
-      "mark": {
-        "type": "text",
-        "align": "center"
-      },
+      "mark": {"type": "text", "align": "center"},
       "encoding": {
-        "y": {"field": "age", "type": "ordinal", "axis": null, "sort": "descending"},
+        "y": {
+          "field": "age",
+          "type": "ordinal",
+          "axis": null,
+          "sort": "descending"
+        },
         "text": {"field": "age", "type": "quantitative"}
       }
-    }, {
-      "transform": [{
-        "filter": {"field": "gender", "equal": "Male"}
-      }],
+    },
+    {
+      "transform": [{"filter": {"field": "gender", "equal": "Male"}}],
       "title": "Male",
       "mark": "bar",
       "encoding": {
         "y": {
-          "field": "age", "title": null,
-          "axis": null, "sort": "descending"
+          "field": "age",
+          "title": null,
+          "axis": null,
+          "sort": "descending"
         },
         "x": {
-          "aggregate": "sum", "field": "people",
-          "title": "population",
+          "aggregate": "sum",
+          "field": "people",
+          "title": "% of Total Population",
           "axis": {"format": "s"}
         },
-        "color": {
-          "field": "gender",
-          "legend": null
-        }
+        "color": {"field": "gender", "legend": null},
+        "tooltip": [
+          {"field": "age"},
+          {"field": "people", "aggregate": "sum"}
+        ]
       }
-    }],
-    "config": {
-      "view": {"stroke": null},
-      "axis": {"grid": false}
     }
-  }
+  ],
+  "config": {"view": {"stroke": null}, "axis": {"grid": false}}
+}

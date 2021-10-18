@@ -17,10 +17,10 @@
     },
     {
       "name": "zoom_level",
-      "value": 1000,
+      "value": 3000,
       "bind": {
         "input": "range",
-        "min": 1000,
+        "min": 1500,
         "max": 25000,
         "step": 1000,
         "name": "Zoom: "
@@ -31,7 +31,7 @@
       "value": [118, -24],
       "bind": {
         "input": "select",
-        "options": [[116, -32], [115.5, -34], [118, -14], [118, -24]],
+        "options": [[116, -32], [115.5, -34], [123, -16], [118, -24]],
         "labels": ["Perth CBD", "South West", "Kimberley", "Central"],
         "name": "Map Centre: "
       }
@@ -86,7 +86,7 @@
         "color": {
           "field": "Income",
           "type": "quantitative",
-          "scale": {"scheme": "reds"},
+          "scale": {"scheme": "blues"},
           "legend": {"format": ".2s"}
         },
         "tooltip": [

@@ -11,6 +11,10 @@
   },
   "encoding": {
     "x": {"timeUnit": "year", "field": "Date"},
-    "y": {"aggregate": "mean", "field": "People", "type": "quantitative"}
+    "y": {"aggregate": "mean", "field": "People", "type": "quantitative"},
+    "tooltip": [
+      {"timeUnit": "year", "field": "Date"},
+      {"aggregate": "mean", "field": "People", "type": "quantitative"}
+    ]
   }
 }

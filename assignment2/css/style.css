@@ -2,10 +2,9 @@
 
 body {
 	align-items: center;
-	background-color: beige;
+	background-color: #dadada;
 	font-family: 'Montserrat', sans-serif;
-	text-align: center;
-	overflow: hidden;
+	text-align: justify;
 }
 
 img {
@@ -26,9 +25,13 @@ body div {
 }
 
 #map {
-	width: 45%;
+	width: 64%;
 }
 
 #population {
-	width: 45%;
+	width: 30%;
+}
+
+#line2 {
+	width: 66%;
 }
