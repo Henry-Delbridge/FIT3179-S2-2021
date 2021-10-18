@@ -3,20 +3,32 @@
 body {
 	align-items: center;
 	background-color: beige;
-}
-.content {
 	font-family: 'Montserrat', sans-serif;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	text-align: center;
+	overflow: hidden;
 }
 
-.column {
-	width:33.33%;
-	float: center;
+img {
+	max-width: 99%;
+}
+.grid {
+	width: 100vw;
 	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;	
-	align-content: flex-start;
+	align-items: flex-start;
+}
+
+body div {
+	padding: 5px;
+	width: 30%;
+}
+
+#map {
+	width: 45%;
+}
+
+#population {
+	width: 45%;
 }
