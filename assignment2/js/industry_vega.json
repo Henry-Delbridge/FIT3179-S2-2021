@@ -1,29 +1,19 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Largest Industries in Western Australia",
     "description": "A simple pie chart with embedded data.",
     "width": "container",
-    "height": 300,
+    "height": 350,
     "data": {
       "values": [
-        {"category": "Agriculture, Forestry and Fishing", "value": 28612},
-        {"category": "Mining", "value": 72542},
-        {"category": "Manufacturing", "value": 64543},
-        {"category": "Electricity", "value": 13385},
-        {"category": "Construction", "value": 113457},
-        {"category": "Wholesale Trade", "value": 29500},
-        {"category": "Retail Trade", "value": 110404},
-        {"category": "Accomodation and Food Services", "value": 74624},
-        {"category": "Transport", "value": 53133},
-        {"category": "IT and Telecommunications", "value": 11449},
-        {"category": "Financial and Insurance", "value": 27242},
-        {"category": "Rental, Hiring and Real Estate", "value": 20142},
-        {"category": "Professional, Scientific and Technical Services", "value": 74144},
-        {"category": "Administrative and Support Services", "value": 37954},
-        {"category": "Public Administration and Safety", "value": 72278},
-        {"category": "Education and Training", "value": 100952},
-        {"category": "Health Care and Social Assistance", "value": 135898},
-        {"category": "Arts and Recreation Services", "value": 18565},
-        {"category": "Other", "value": 45855}
+        {"category": "Healthcare", "value": 135898,"percentage":"11.74"},
+        {"category": "Construction", "value": 113457,"percentage":"9.80"},
+        {"category": "Retail", "value": 110404,"percentage":"9.54"},
+        {"category": "Education", "value": 100952,"percentage":"8.71"},
+        {"category": "Accomodation", "value": 74624,"percentage":"6.46"},
+        {"category": "Professional", "value": 74144,"percentage":"6.40"},
+        {"category": "Mining", "value": 72278,"percentage":"6.27"},
+        {"category": "Other", "value": 403421,"percentage":"41.1"}
       ]
     },
     "mark": "arc",
@@ -31,7 +21,7 @@
       "theta": {"field": "value", "type": "quantitative"},
       "color": {"field": "category", "type": "nominal"},
       "tooltip": [
-        {"field": "value", "type": "quantitative"},
+        {"field": "percentage", "type": "quantitative"},
         {"field": "category", "type": "nominal"}
       ]
     }

@@ -7,6 +7,11 @@ body {
 	text-align: justify;
 }
 
+.h1 {
+	text-align: "center";
+	align-items: center;
+}
+
 img {
 	max-width: 99%;
 }
@@ -33,5 +38,5 @@ body div {
 }
 
 #line2 {
-	width: 66%;
+	width: 60%;
 }

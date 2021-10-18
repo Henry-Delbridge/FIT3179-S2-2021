@@ -10,7 +10,7 @@
     "y": {"field": "Rate", "type": "quantitative"},
     "tooltip": [
       {"field": "State", "type": "nominal"},
-      {"field": "Rate", "type": "quantitative"}
+      {"field": "Rate", "type": "quantitative"}     
     ]
   }
 }
