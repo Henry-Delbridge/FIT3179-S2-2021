@@ -3,12 +3,25 @@
     "description": "A simple pie chart with embedded data.",
     "data": {
       "values": [
-        {"category": 1, "value": 4},
-        {"category": 2, "value": 6},
-        {"category": 3, "value": 10},
-        {"category": 4, "value": 3},
-        {"category": 5, "value": 7},
-        {"category": 6, "value": 8}
+        {"category": "Agriculture, Forestry and Fishing", "value": 28612},
+        {"category": "Mining", "value": 72542},
+        {"category": "Manufacturing", "value": 64543},
+        {"category": "Electricity", "value": 13385},
+        {"category": "Construction", "value": 113457},
+        {"category": "Wholesale Trade", "value": 29500},
+        {"category": "Retail Trade", "value": 110404},
+        {"category": "Accomodation and Food Services", "value": 74624},
+        {"category": "Transport", "value": 53133},
+        {"category": "IT and Telecommunications", "value": 11449},
+        {"category": "Financial and Insurance", "value": 27242},
+        {"category": "Rental, Hiring and Real Estate", "value": 20142},
+        {"category": "Professional, Scientific and Technical Services", "value": 74144},
+        {"category": "Administrative and Support Services", "value": 37954},
+        {"category": "Public Administration and Safety", "value": 72278},
+        {"category": "Education and Training", "value": 100952},
+        {"category": "Health Care and Social Assistance", "value": 135898},
+        {"category": "Arts and Recreation Services", "value": 18565},
+        {"category": "Other", "value": 45855}
       ]
     },
     "mark": "arc",
@@ -16,4 +29,4 @@
       "theta": {"field": "value", "type": "quantitative"},
       "color": {"field": "category", "type": "nominal"}
     }
-  }
+}

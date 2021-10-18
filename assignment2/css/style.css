@@ -1,20 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 body {
+	align-items: center;
+	background-color: beige;
+}
+.content {
 	font-family: 'Montserrat', sans-serif;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	background-color: beige;
 }
 
 .column {
 	width:33.33%;
 	float: center;
-}
-
-.column {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;

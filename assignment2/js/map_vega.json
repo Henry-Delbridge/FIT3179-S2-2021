@@ -1,11 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Average Income per Capita for each LGA in Western Australia",
+  "title": "Median house price per suburb (2010-2020)",
   "width": "container",
-  "height": 600,
+  "height": 500,
   "params": [
     {
       "name": "Year_selection",
+      "value": 2017,
       "bind": {
         "input": "range",
         "min": 2011,
@@ -16,12 +17,12 @@
     },
     {
       "name": "zoom_level",
-      "value": 30000,
+      "value": 1000,
       "bind": {
         "input": "range",
         "min": 1000,
-        "max": 6000,
-        "step": 100,
+        "max": 25000,
+        "step": 1000,
         "name": "Zoom: "
       }
     },
@@ -49,7 +50,7 @@
       },
       "transform": [
         {
-          "calculate": "'Data is not available'",
+          "calculate": "'Data is not available in ' + datum.properties.wa_lga_s_2",
           "as": "note"
         }
       ],
@@ -73,10 +74,11 @@
               "url": "https://raw.githubusercontent.com/Henry-Delbridge/FIT3179-S2-2021/main/assignment2/js/wa_lga_topo.json",
               "format": {"type": "topojson", "feature": "wa_lga"}
             },
-            "key": "LGA"
-          }
+            "key": "properties.wa_lga_s_3"
+          },
+          "as": "geo"
         },
-        {"filter": "datum.year == Year_selection"}
+        {"filter": "datum.Year == Year_selection"}
       ],
       "mark": {"type": "geoshape", "stroke": "#fff", "strokeWidth": 0.5},
       "encoding": {
@@ -84,12 +86,18 @@
         "color": {
           "field": "Income",
           "type": "quantitative",
-          "scale": {"domain": [20000, 100000], "scheme": "blues"},
+          "scale": {"scheme": "reds"},
           "legend": {"format": ".2s"}
         },
         "tooltip": [
-          {"field": "properties.LGA", "type": "nominal", "title": "LGA"},
-          {"field": "Income", "type": "quantitative"}
+          {"field": "LGA", "type": "nominal", "title": "LGA"},
+          {
+            "field": "Income",
+            "type": "quantitative",
+            "title": "Median Income",
+            "format": ","
+          },
+          {"field": "Year", "type": "quantitative", "title": "Year"}
         ]
       }
     }
