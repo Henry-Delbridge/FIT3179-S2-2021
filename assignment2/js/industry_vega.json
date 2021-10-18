@@ -1,28 +1,42 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Largest Industries in Western Australia",
-    "description": "A simple pie chart with embedded data.",
-    "width": "container",
-    "height": 350,
-    "data": {
-      "values": [
-        {"category": "Healthcare", "value": 135898,"percentage":"11.74"},
-        {"category": "Construction", "value": 113457,"percentage":"9.80"},
-        {"category": "Retail", "value": 110404,"percentage":"9.54"},
-        {"category": "Education", "value": 100952,"percentage":"8.71"},
-        {"category": "Accomodation", "value": 74624,"percentage":"6.46"},
-        {"category": "Professional", "value": 74144,"percentage":"6.40"},
-        {"category": "Mining", "value": 72278,"percentage":"6.27"},
-        {"category": "Other", "value": 403421,"percentage":"41.1"}
-      ]
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Largest Industries in Western Australia",
+  "description": "A simple pie chart with embedded data.",
+  "width": "container",
+  "height": 350,
+  "data": {
+    "values": [
+      {"category": "Healthcare", "value": 135898,"percentage":"11.74"},
+      {"category": "Construction", "value": 113457,"percentage":"9.80"},
+      {"category": "Retail", "value": 110404,"percentage":"9.54"},
+      {"category": "Education", "value": 100952,"percentage":"8.71"},
+      {"category": "Accomodation", "value": 74624,"percentage":"6.46"},
+      {"category": "Professional", "value": 74144,"percentage":"6.40"},
+      {"category": "Mining", "value": 72278,"percentage":"6.27"},
+      {"category": "Other", "value": 403421,"percentage":"41.1"}
+    ]
+  },
+  "layer": [
+    {
+      "mark": "arc",
+      "encoding": {
+        "theta": {"field": "value", "type": "quantitative"},
+        "color": {"field": "category", "type": "nominal"},
+        "tooltip": [
+          {"field": "percentage", "type": "quantitative"},
+          {"field": "category", "type": "nominal"}
+       ]
+      } 
     },
-    "mark": "arc",
-    "encoding": {
-      "theta": {"field": "value", "type": "quantitative"},
-      "color": {"field": "category", "type": "nominal"},
-      "tooltip": [
-        {"field": "percentage", "type": "quantitative"},
-        {"field": "category", "type": "nominal"}
-      ]
+    {
+      "transform": [
+        {"filter": "datum.category == 'Mining'"},
+        {"calculate": "'Mining makes up ' + datum['percentage'] +'% of WA Industry'","as": "text_annotation"}
+      ],
+      "mark": {"type": "text", "align": "left", "dx": 20,"dy":150},
+      "encoding": {
+        "text": {"field": "text_annotation"}
+      }
     }
+  ]
 }
